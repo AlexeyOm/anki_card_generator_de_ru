@@ -27,5 +27,3 @@ my_model = genanki.Model(
     ],
     css=style,
     )
-
-#TODO добавить красивый CSS
