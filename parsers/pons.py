@@ -24,5 +24,6 @@ def parse_pons(input: str):
                     #print(f"{translation['target']=}")
                     full_translation.add(translation['target'])
     full_translation = ", ".join(list(full_translation))
+    full_translation = full_translation.replace("́", "") # removing stress mark
     print(full_translation)
     return {"status": 1, "question": full_translation, "translation": input}
