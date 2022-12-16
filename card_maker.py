@@ -4,6 +4,8 @@ import requests
 import genanki
 from model import my_model
 from parsers import parse_duden_get_sound, parse_verbformen, parse_pons
+import os
+
 input_word = "machen"
 
 if __name__ == "__main__":
@@ -61,4 +63,6 @@ if __name__ == "__main__":
 
 
     if got_a_card:
+        if not os.path.exists("output"):
+            os.makedirs("output")
         genanki.Package(my_deck).write_to_file('output/result.apkg')
